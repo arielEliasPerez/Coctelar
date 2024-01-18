@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cócteles Clásicos</title>
+</head>
+<body>
+    <header>
+        <h1>Cócteles Clásicos</h1>
+        <input type="text" id="buscar-coctel" placeholder="Buscar Cóctel...">
+    </header>
+    
+    <div id="cocteles-container" class="cocteles-container">
+        <!-- Aquí se cargarán los cocteles dinámicamente con JavaScript -->
+    </div>
+
+    <div id="receta-modal" class="modal">
+        <!-- Aquí se cargará la receta del cóctel seleccionado -->
+        <div class="modal-content">
+            <span class="close-modal" onclick="cerrarModal()">&times;</span>
+            <h2 id="coctel-titulo"></h2>
+            <p id="coctel-receta"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
