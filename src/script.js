@@ -80,15 +80,14 @@ function toggleTodosLosCocteles(cocteles, categoria) {
     if(mostrarTodos){
         coctelesContainer.innerHTML = ""; // Limpiar el contenedor antes de mostrar todos los cocteles
         mostrarCocteles(cocteles, categoria, 0, coctelesIniciales);
-        verMasEnlace.textContent = "Ver más"
+        verMasEnlace.textContent = "Ver más..."
     } else{
         mostrarCocteles(cocteles, categoria, coctelesIniciales, cocteles.length);
-        verMasEnlace.textContent = "Ver menos"
+        verMasEnlace.textContent = "Ver menos..."
     }
     
     mostrarTodos = !mostrarTodos;
     //verMasEnlace.textContent = "Ver menos";
-    //verMasEnlace.style.display = "none"; // Ocultar el enlace "Ver más"
 }
 
 /*
@@ -125,6 +124,9 @@ function filtrarCocteles(cocteles, categoria) {
     const filtro = buscarInput.value.toLowerCase();
     const coctelesFiltrados = cocteles.filter(coctel => coctel.nombre.toLowerCase().includes(filtro));
 
+    verMasEnlace.style.display = "none"; // Ocultar el enlace "Ver más"
+    console.log("NO Vacio");
+    
     switch(categoria){
         case Categoria.CLASICOS:
             coctelesContainer.innerHTML = "";
@@ -133,8 +135,15 @@ function filtrarCocteles(cocteles, categoria) {
             autorContainer.innerHTML = "";
             break;
     }
-
-    mostrarCocteles(coctelesFiltrados, categoria, 0, coctelesFiltrados.length);
+    if(buscarInput.value === ""){
+        mostrarTodos = false;
+        verMasEnlace.style.display = "block";
+        verMasEnlace.textContent = "Ver más..."
+        mostrarCocteles(coctelesFiltrados, categoria, 0, coctelesIniciales);
+    }else{
+        mostrarCocteles(coctelesFiltrados, categoria, 0, coctelesFiltrados.length);
+    }
+    
 }
 /*
 function filtrarCoctelesAutor() {
@@ -148,19 +157,23 @@ buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesClasicos, Cate
 buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesAutor, Categoria.DE_AUTOR));
 
 // Cargar los cocteles al cargar la página
-document.addEventListener("DOMContentLoaded", () => {
-    mostrarCocteles(coctelesClasicos, Categoria.CLASICOS, 0, coctelesIniciales);
-    mostrarCocteles(coctelesAutor, Categoria.DE_AUTOR, 0, coctelesIniciales);
-    buscarInput.value = ""; // Asegurarse de que el campo de búsqueda esté vacío al cargar la página
-    
-    if (coctelesIniciales < coctelesClasicos.length) {
-        verMasEnlace.style.display = "block";
-        verMasEnlace.addEventListener("click", function (event){
-            event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
-            toggleTodosLosCocteles(coctelesClasicos, Categoria.CLASICOS)
-        });
-    }
-});
+function iniciarContenido(){
+    document.addEventListener("DOMContentLoaded", () => {
+        mostrarCocteles(coctelesClasicos, Categoria.CLASICOS, 0, coctelesIniciales);
+        mostrarCocteles(coctelesAutor, Categoria.DE_AUTOR, 0, coctelesIniciales);
+        buscarInput.value = ""; // Asegurarse de que el campo de búsqueda esté vacío al cargar la página
+        
+        if (coctelesIniciales < coctelesClasicos.length) {
+            verMasEnlace.style.display = "block";
+            verMasEnlace.addEventListener("click", function (event){
+                event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+                toggleTodosLosCocteles(coctelesClasicos, Categoria.CLASICOS)
+            });
+        }
+    });
+}
+
+iniciarContenido();
 /*
 document.addEventListener("DOMContentLoaded", () => {
     mostrarCoctelesAutor();
