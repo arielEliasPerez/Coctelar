@@ -42,10 +42,12 @@ header {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: black;
+    color: white;
     margin: 10% auto;
     padding: 20px;
     max-width: 600px;
+    min-height: 300px;
     position: relative;
 }
 
@@ -72,4 +74,10 @@ img{
 .titulo-tipo{
     color: beige;
     text-align: center;
+}
+
+#coctel-imagen{
+    float: right;
+    width: 250px;
+    height: 300px;
 }
