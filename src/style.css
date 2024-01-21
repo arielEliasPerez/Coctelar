@@ -81,3 +81,8 @@ img{
     width: 250px;
     height: 300px;
 }
+
+#ver-mas{
+    display: block;
+    color: white;
+}

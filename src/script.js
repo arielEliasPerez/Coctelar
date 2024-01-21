@@ -6,9 +6,10 @@ const coctelImagen = document.getElementById("coctel-imagen");
 const coctelIngredientes = document.getElementById("coctel-ingredientes");
 const coctelReceta = document.getElementById("coctel-receta");
 const buscarInput = document.getElementById("buscar-coctel");
-//const clasicosContainer = document.getElementById("clasicos-container");
+const verMasEnlace = document.getElementById("ver-mas");
 
-const CategoriasCocteles = {
+
+const Categoria = {
     CLASICOS: 0,
     DE_AUTOR: 1,
     BATIDOS: 2,
@@ -17,6 +18,9 @@ const CategoriasCocteles = {
     TIKIS: 5,
     REFRESCADOS: 6
 };
+
+const coctelesIniciales = 8;
+let mostrarTodos = false;
 
 // Datos de ejemplo (puedes reemplazarlos con tus propias recetas)
 const coctelesClasicos = [
@@ -52,8 +56,8 @@ const coctelesAutor = [
 ];
 
 // Función para mostrar los cocteles en la página
-function mostrarCocteles(coctelesFiltrados, categoria) {
-    coctelesFiltrados.forEach((coctel, index) => {
+function mostrarCocteles(coctelesFiltrados, categoria, inicioCocteles, cantCocteles) {
+    coctelesFiltrados.slice(inicioCocteles, cantCocteles).forEach((coctel, index) => {
         const coctelCard = document.createElement("div");
         coctelCard.className = "coctel-card";
         coctelCard.innerHTML = `<img src="${coctel.imagen}" alt="${coctel.nombre}">
@@ -61,15 +65,32 @@ function mostrarCocteles(coctelesFiltrados, categoria) {
         coctelCard.addEventListener("click", () => abrirModal(coctel));
         
         switch(categoria){
-            case CategoriasCocteles.CLASICOS:
+            case Categoria.CLASICOS:
                 coctelesContainer.appendChild(coctelCard);
                 break;
-            case CategoriasCocteles.DE_AUTOR:
+            case Categoria.DE_AUTOR:
                 autorContainer.appendChild(coctelCard);
                 break;
         }
     });
 }
+
+function toggleTodosLosCocteles(cocteles, categoria) {
+    
+    if(mostrarTodos){
+        coctelesContainer.innerHTML = ""; // Limpiar el contenedor antes de mostrar todos los cocteles
+        mostrarCocteles(cocteles, categoria, 0, coctelesIniciales);
+        verMasEnlace.textContent = "Ver más"
+    } else{
+        mostrarCocteles(cocteles, categoria, coctelesIniciales, cocteles.length);
+        verMasEnlace.textContent = "Ver menos"
+    }
+    
+    mostrarTodos = !mostrarTodos;
+    //verMasEnlace.textContent = "Ver menos";
+    //verMasEnlace.style.display = "none"; // Ocultar el enlace "Ver más"
+}
+
 /*
 function mostrarCoctelesAutor(coctelesFiltrados = coctelesAutor) {
     autorContainer.innerHTML = "";
@@ -105,15 +126,15 @@ function filtrarCocteles(cocteles, categoria) {
     const coctelesFiltrados = cocteles.filter(coctel => coctel.nombre.toLowerCase().includes(filtro));
 
     switch(categoria){
-        case CategoriasCocteles.CLASICOS:
+        case Categoria.CLASICOS:
             coctelesContainer.innerHTML = "";
             break;
-        case CategoriasCocteles.DE_AUTOR:
+        case Categoria.DE_AUTOR:
             autorContainer.innerHTML = "";
             break;
     }
 
-    mostrarCocteles(coctelesFiltrados, categoria);
+    mostrarCocteles(coctelesFiltrados, categoria, 0, coctelesFiltrados.length);
 }
 /*
 function filtrarCoctelesAutor() {
@@ -123,14 +144,22 @@ function filtrarCoctelesAutor() {
 }*/
 
 //manejar eventos de busquedas
-buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesClasicos, CategoriasCocteles.CLASICOS));
-buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesAutor, CategoriasCocteles.DE_AUTOR));
+buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesClasicos, Categoria.CLASICOS));
+buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesAutor, Categoria.DE_AUTOR));
 
 // Cargar los cocteles al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
-    mostrarCocteles(coctelesClasicos, CategoriasCocteles.CLASICOS);
-    mostrarCocteles(coctelesAutor, CategoriasCocteles.DE_AUTOR);
+    mostrarCocteles(coctelesClasicos, Categoria.CLASICOS, 0, coctelesIniciales);
+    mostrarCocteles(coctelesAutor, Categoria.DE_AUTOR, 0, coctelesIniciales);
     buscarInput.value = ""; // Asegurarse de que el campo de búsqueda esté vacío al cargar la página
+    
+    if (coctelesIniciales < coctelesClasicos.length) {
+        verMasEnlace.style.display = "block";
+        verMasEnlace.addEventListener("click", function (event){
+            event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+            toggleTodosLosCocteles(coctelesClasicos, Categoria.CLASICOS)
+        });
+    }
 });
 /*
 document.addEventListener("DOMContentLoaded", () => {
