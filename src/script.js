@@ -6,7 +6,17 @@ const coctelImagen = document.getElementById("coctel-imagen");
 const coctelIngredientes = document.getElementById("coctel-ingredientes");
 const coctelReceta = document.getElementById("coctel-receta");
 const buscarInput = document.getElementById("buscar-coctel");
-const clasicosContainer = document.getElementById("clasicos-container");
+//const clasicosContainer = document.getElementById("clasicos-container");
+
+const CategoriasCocteles = {
+    CLASICOS: 0,
+    DE_AUTOR: 1,
+    BATIDOS: 2,
+    FROZZEN: 3,
+    CON_CAFE: 4,
+    TIKIS: 5,
+    REFRESCADOS: 6
+};
 
 // Datos de ejemplo (puedes reemplazarlos con tus propias recetas)
 const coctelesClasicos = [
@@ -42,18 +52,25 @@ const coctelesAutor = [
 ];
 
 // Función para mostrar los cocteles en la página
-function mostrarCocteles(coctelesFiltrados = coctelesClasicos) {
-    coctelesContainer.innerHTML = "";
+function mostrarCocteles(coctelesFiltrados, categoria) {
     coctelesFiltrados.forEach((coctel, index) => {
         const coctelCard = document.createElement("div");
         coctelCard.className = "coctel-card";
         coctelCard.innerHTML = `<img src="${coctel.imagen}" alt="${coctel.nombre}">
                                <p>${coctel.nombre}</p>`;
         coctelCard.addEventListener("click", () => abrirModal(coctel));
-        coctelesContainer.appendChild(coctelCard);
+        
+        switch(categoria){
+            case CategoriasCocteles.CLASICOS:
+                coctelesContainer.appendChild(coctelCard);
+                break;
+            case CategoriasCocteles.DE_AUTOR:
+                autorContainer.appendChild(coctelCard);
+                break;
+        }
     });
 }
-
+/*
 function mostrarCoctelesAutor(coctelesFiltrados = coctelesAutor) {
     autorContainer.innerHTML = "";
     coctelesFiltrados.forEach((coctel, index) => {
@@ -64,7 +81,7 @@ function mostrarCoctelesAutor(coctelesFiltrados = coctelesAutor) {
         coctelCard.addEventListener("click", () => abrirModal(coctel));
         autorContainer.appendChild(coctelCard);
     });
-}
+}*/
 
 // Función para abrir el modal con la receta del coctel seleccionado
 function abrirModal(coctel) {
@@ -83,26 +100,36 @@ function cerrarModal() {
 }
 
 //funcion para filtrar cocteles según la buscqueda
-function filtrarCocteles() {
+function filtrarCocteles(cocteles, categoria) {
     const filtro = buscarInput.value.toLowerCase();
-    const coctelesFiltrados = coctelesClasicos.filter(coctel => coctel.nombre.toLowerCase().includes(filtro));
-    mostrarCocteles(coctelesFiltrados);
-}
+    const coctelesFiltrados = cocteles.filter(coctel => coctel.nombre.toLowerCase().includes(filtro));
 
+    switch(categoria){
+        case CategoriasCocteles.CLASICOS:
+            coctelesContainer.innerHTML = "";
+            break;
+        case CategoriasCocteles.DE_AUTOR:
+            autorContainer.innerHTML = "";
+            break;
+    }
+
+    mostrarCocteles(coctelesFiltrados, categoria);
+}
+/*
 function filtrarCoctelesAutor() {
     const filtro = buscarInput.value.toLowerCase();
     const coctelesFiltrados = coctelesAutor.filter(coctel => coctel.nombre.toLowerCase().includes(filtro));
-    mostrarCoctelesAutor(coctelesFiltrados);
-}
+    mostrarCocteles(coctelesFiltrados, CategoriasCocteles.DE_AUTOR);
+}*/
 
 //manejar eventos de busquedas
-buscarInput.addEventListener("input", filtrarCocteles);
-buscarInput.addEventListener("input", filtrarCoctelesAutor);
+buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesClasicos, CategoriasCocteles.CLASICOS));
+buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesAutor, CategoriasCocteles.DE_AUTOR));
 
 // Cargar los cocteles al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
-    mostrarCocteles();
-    mostrarCoctelesAutor();
+    mostrarCocteles(coctelesClasicos, CategoriasCocteles.CLASICOS);
+    mostrarCocteles(coctelesAutor, CategoriasCocteles.DE_AUTOR);
     buscarInput.value = ""; // Asegurarse de que el campo de búsqueda esté vacío al cargar la página
 });
 /*
