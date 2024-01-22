@@ -50,9 +50,15 @@ const coctelesClasicos = [
 
 const coctelesAutor = [
     { nombre: "A.P Zombie", imagen: "../images/apzombie.jpg", ingredientes:["30 ml de Ron oscuro", "45 ml de Amaretto (casero)", "30 ml de Falernum (casero)", "30 ml de Jugo de Pomelo", "30 ml de Zumo de Limón", "15 ml de Granadina"], receta: "Ingredientes y pasos para la Margarita..." },
+    { nombre: "Bubba Loo", imagen: "../images/bubbaloo.jpg", ingredientes: ["60 ml de Vermouth rosso", "30 ml de almibar", "30 ml de zumo de limón", "30 ml de Jugo de Blueberry", "Clara de Huevo"], receta: "Ingredientes y pasos para la Margarita..." },
     { nombre: "Cofferula", imagen: "../images/cofferula.jpg", ingredientes: ["30 ml de Ron oscuro", "30 ml de Licor de Café", "30 ml de Amarula", "30 ml de Café Espresso"], receta: "Ingredientes y pasos para la Margarita..." },
     { nombre: "Marroquino", imagen: "../images/marroquino.jpg", ingredientes: ["45 ml de Whisky scotch", "15 ml de Licor de Café", "15 ml de Amaretto (casero)", "30 ml de Licor de Marroc (casero)", "30 ml de Syrup de Marroc", "30 ml de Half and Half"], receta: "Ingredientes y pasos para la Margarita..." },
+    { nombre: "Ocaso de Sol", imagen: "../images/ocasodesol.jpg", ingredientes: ["30 ml de Aperol", "30 ml de Gancia", "30 ml de Granadina", "Rellenar con Naranja"], receta: "Ingredientes y pasos para la Margarita..." },
     { nombre: "Pink Ilex", imagen: "../images/pinkilex.jpg", ingredientes:["30 ml de London Dry Gin", "45 ml de Gancia", "30 ml de Infusión de Yerba Mate", "30 ml de Falernum (casero)", "30 ml de Jugo de Pomelo", "1 cucharada chica de Miel"], receta: "Ingredientes y pasos para la Margarita..." },
+    { nombre: "Red Ilex", imagen: "../images/redilex.jpg", ingredientes: ["30 ml de Gin", "30 ml de Aperol", "30 ml de Falernum (casero)", "30 ml de Infusión de Yerba Mate", "30 ml de Jugo de Naranja"], receta: "Ingredientes y pasos para la Margarita..." },
+    { nombre: "Rose of the Nile", imagen: "../images/roseofthenile.jpg", ingredientes: ["60 ml de Vermouth rosso", "30 ml de Syrup de Jengibre", "30 ml de zumo de Limón", "30 ml de Jugo de Pomelo", "Clara de Huevo"], receta: "Ingredientes y pasos para la Margarita..." },
+    { nombre: "White Ilex", imagen: "../images/whiteilex.jpg", ingredientes: ["45 ml de Ginebra", "30 ml de Falernum (Casero)", "30 ml de Infusión de Yerba Mate", "30 ml de Pulpa de Ananá"], receta: "Ingredientes y pasos para la Margarita..." },
+    // { nombre: "", imagen: "../images/.jpg", ingredientes: [], receta: "Ingredientes y pasos para la Margarita..." },
 ];
 
 // Función para mostrar los cocteles en la página
@@ -89,19 +95,6 @@ function toggleTodosLosCocteles(cocteles, categoria) {
     mostrarTodos = !mostrarTodos;
     //verMasEnlace.textContent = "Ver menos";
 }
-
-/*
-function mostrarCoctelesAutor(coctelesFiltrados = coctelesAutor) {
-    autorContainer.innerHTML = "";
-    coctelesFiltrados.forEach((coctel, index) => {
-        const coctelCard = document.createElement("div");
-        coctelCard.className = "coctel-card";
-        coctelCard.innerHTML = `<img src="${coctel.imagen}" alt="${coctel.nombre}">
-                               <p>${coctel.nombre}</p>`;
-        coctelCard.addEventListener("click", () => abrirModal(coctel));
-        autorContainer.appendChild(coctelCard);
-    });
-}*/
 
 // Función para abrir el modal con la receta del coctel seleccionado
 function abrirModal(coctel) {
@@ -145,12 +138,6 @@ function filtrarCocteles(cocteles, categoria) {
     }
     
 }
-/*
-function filtrarCoctelesAutor() {
-    const filtro = buscarInput.value.toLowerCase();
-    const coctelesFiltrados = coctelesAutor.filter(coctel => coctel.nombre.toLowerCase().includes(filtro));
-    mostrarCocteles(coctelesFiltrados, CategoriasCocteles.DE_AUTOR);
-}*/
 
 //manejar eventos de busquedas
 buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesClasicos, Categoria.CLASICOS));
@@ -170,13 +157,8 @@ function iniciarContenido(){
                 toggleTodosLosCocteles(coctelesClasicos, Categoria.CLASICOS)
             });
         }
+        
     });
 }
 
 iniciarContenido();
-/*
-document.addEventListener("DOMContentLoaded", () => {
-    mostrarCoctelesAutor();
-    buscarInput.value = ""; // Asegurarse de que el campo de búsqueda esté vacío al cargar la página
-});
-*/
