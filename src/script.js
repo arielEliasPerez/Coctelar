@@ -1,26 +1,29 @@
-const coctelesContainer = document.getElementById("cocteles-container");
-const autorContainer = document.getElementById("autor-container");
+//const coctelesContainer = document.getElementById("cocteles-container");
+//const autorContainer = document.getElementById("autor-container");
 const modal = document.getElementById("receta-modal");
 const coctelTitulo = document.getElementById("coctel-titulo");
 const coctelImagen = document.getElementById("coctel-imagen");
 const coctelIngredientes = document.getElementById("coctel-ingredientes");
 const coctelReceta = document.getElementById("coctel-receta");
 const buscarInput = document.getElementById("buscar-coctel");
-const verMasEnlace = document.getElementById("ver-mas");
+//const verMasClasicos = document.getElementById("ver-mas-clasicos");
+//const verMasAutor = document.getElementById("ver-mas-autor");
 
 
-const Categoria = {
-    CLASICOS: 0,
-    DE_AUTOR: 1,
-    BATIDOS: 2,
-    FROZZEN: 3,
-    CON_CAFE: 4,
-    TIKIS: 5,
-    REFRESCADOS: 6
+const categorias = {
+   clasicos: {
+    container: document.getElementById("cocteles-container"),
+    enlaceVerMas: document.getElementById("ver-mas-clasicos"),
+    mostrarTodos: false
+   },
+   autor: {
+    container: document.getElementById("autor-container"),
+    enlaceVerMas: document.getElementById("ver-mas-autor"),
+    mostrarTodos: false
+   }
 };
 
 const coctelesIniciales = 8;
-let mostrarTodos = false;
 
 // Datos de ejemplo (puedes reemplazarlos con tus propias recetas)
 const coctelesClasicos = [
@@ -70,6 +73,10 @@ function mostrarCocteles(coctelesFiltrados, categoria, inicioCocteles, cantCocte
                                <p>${coctel.nombre}</p>`;
         coctelCard.addEventListener("click", () => abrirModal(coctel));
         
+        const infoCartegoria = categorias[categoria];
+
+        infoCartegoria.container.appendChild(coctelCard);
+/*
         switch(categoria){
             case Categoria.CLASICOS:
                 coctelesContainer.appendChild(coctelCard);
@@ -77,22 +84,23 @@ function mostrarCocteles(coctelesFiltrados, categoria, inicioCocteles, cantCocte
             case Categoria.DE_AUTOR:
                 autorContainer.appendChild(coctelCard);
                 break;
-        }
+        }*/
     });
 }
 
 function toggleTodosLosCocteles(cocteles, categoria) {
-    
-    if(mostrarTodos){
-        coctelesContainer.innerHTML = ""; // Limpiar el contenedor antes de mostrar todos los cocteles
+    const infoCartegoria = categorias[categoria];
+
+    if(infoCartegoria.mostrarTodos){
+        infoCartegoria.container.innerHTML = ""; // Limpiar el contenedor antes de mostrar todos los cocteles
         mostrarCocteles(cocteles, categoria, 0, coctelesIniciales);
-        verMasEnlace.textContent = "Ver más..."
+        infoCartegoria.enlaceVerMas.textContent = "Ver más..."
     } else{
         mostrarCocteles(cocteles, categoria, coctelesIniciales, cocteles.length);
-        verMasEnlace.textContent = "Ver menos..."
+        infoCartegoria.enlaceVerMas.textContent = "Ver menos..."
     }
     
-    mostrarTodos = !mostrarTodos;
+    infoCartegoria.mostrarTodos = !infoCartegoria.mostrarTodos;
     //verMasEnlace.textContent = "Ver menos";
 }
 
@@ -117,21 +125,23 @@ function filtrarCocteles(cocteles, categoria) {
     const filtro = buscarInput.value.toLowerCase();
     const coctelesFiltrados = cocteles.filter(coctel => coctel.nombre.toLowerCase().includes(filtro));
 
-    verMasEnlace.style.display = "none"; // Ocultar el enlace "Ver más"
-    console.log("NO Vacio");
-    
-    switch(categoria){
+    const infoCartegoria = categorias[categoria];
+
+    infoCartegoria.enlaceVerMas.style.display = "none"; // Ocultar el enlace "Ver más"
+    infoCartegoria.container.innerHTML = "";
+
+    /*switch(categoria){
         case Categoria.CLASICOS:
             coctelesContainer.innerHTML = "";
             break;
         case Categoria.DE_AUTOR:
             autorContainer.innerHTML = "";
             break;
-    }
+    }*/
     if(buscarInput.value === ""){
-        mostrarTodos = false;
-        verMasEnlace.style.display = "block";
-        verMasEnlace.textContent = "Ver más..."
+        infoCartegoria.mostrarTodos = false;
+        infoCartegoria.enlaceVerMas.style.display = "block";
+        infoCartegoria.enlaceVerMas.textContent = "Ver más..."
         mostrarCocteles(coctelesFiltrados, categoria, 0, coctelesIniciales);
     }else{
         mostrarCocteles(coctelesFiltrados, categoria, 0, coctelesFiltrados.length);
@@ -140,24 +150,29 @@ function filtrarCocteles(cocteles, categoria) {
 }
 
 //manejar eventos de busquedas
-buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesClasicos, Categoria.CLASICOS));
-buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesAutor, Categoria.DE_AUTOR));
+buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesClasicos, "clasicos"));
+buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesAutor, "autor"));
+
+function mostrarCategoria(cocteles, categoria){
+    mostrarCocteles(cocteles, categoria, 0, coctelesIniciales);
+    buscarInput.value = ""; // Asegurarse de que el campo de búsqueda esté vacío al cargar la página
+    
+    const infoCartegoria = categorias[categoria];
+
+    if (coctelesIniciales < cocteles.length) {
+        infoCartegoria.enlaceVerMas.style.display = "block";
+        infoCartegoria.enlaceVerMas.addEventListener("click", function (event){
+            event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+            toggleTodosLosCocteles(cocteles, categoria);
+        });
+    }
+}
 
 // Cargar los cocteles al cargar la página
 function iniciarContenido(){
     document.addEventListener("DOMContentLoaded", () => {
-        mostrarCocteles(coctelesClasicos, Categoria.CLASICOS, 0, coctelesIniciales);
-        mostrarCocteles(coctelesAutor, Categoria.DE_AUTOR, 0, coctelesIniciales);
-        buscarInput.value = ""; // Asegurarse de que el campo de búsqueda esté vacío al cargar la página
-        
-        if (coctelesIniciales < coctelesClasicos.length) {
-            verMasEnlace.style.display = "block";
-            verMasEnlace.addEventListener("click", function (event){
-                event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
-                toggleTodosLosCocteles(coctelesClasicos, Categoria.CLASICOS)
-            });
-        }
-        
+        mostrarCategoria(coctelesClasicos, "clasicos");
+        mostrarCategoria(coctelesAutor, "autor");
     });
 }
 

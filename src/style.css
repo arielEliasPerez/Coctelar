@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    
+    background-color: rgba(0, 0, 0, 0.503);
     color: yellow;
     text-align: center;
     padding: 10px 0;
@@ -83,6 +83,6 @@ img{
     height: 300px;
 }
 
-#ver-mas{
+.ver-mas{
     color: white;
 }
