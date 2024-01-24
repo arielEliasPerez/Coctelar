@@ -11,17 +11,30 @@
         <h1>Recetas de Cócteles</h1>
         <input type="text" id="buscar-coctel" placeholder="Buscar Coctel...">
     </header>
-
     
+    <div id="panel-izquierdo">
+        <div id="boton-desplegable">&#9776;</div>
+        <ul id="indice-categorias">
+            <li><a href="#titulo-clasicos">Cocteles Clásicos</a></li>
+            <li><a href="#titulo-autor">Cocteles de Autor</a></li>
+            <li><a href="#autor">Cocteles Batidos</a></li>
+            <li><a href="#autor">Cocteles Refrescados</a></li>
+            <li><a href="#autor">Cocteles Frozzen</a></li>
+            <li><a href="#autor">Cocteles Tikis</a></li>
+            <li><a href="#autor">Cocteles con Cafés</a></li>
+            <li><a href="#autor">Cocteles con Champagne</a></li>
+            <!-- Agrega más categorías según sea necesario -->
+        </ul>
+    </div>
 
-    <main>
-        <h2 class="titulo-tipo">Cocteles Clásicos</h2>
+    <main id="main">
+        <h2 id="titulo-clasicos" class="titulo-tipo">Cocteles Clásicos</h2>
         <div id="cocteles-container" class="cocteles-container">
             <!-- Aquí se cargarán los cocteles dinámicamente con JavaScript -->
         </div>
         <a id="ver-mas-clasicos" class="ver-mas" href="#">Ver más...</a>
 
-        <h2 class="titulo-tipo">Cocteles de Autor</h2>
+        <h2 id="titulo-autor" class="titulo-tipo">Cocteles de Autor</h2>
         <div id="autor-container" class="cocteles-container">
         </div>
         <a id="ver-mas-autor" class="ver-mas" href="#">Ver más...</a>

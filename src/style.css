@@ -1,11 +1,3 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('../images/wallpaper.png');
-    background-size: cover;
-    background-attachment: fixed;
-}
 
 header {
     background-color: rgba(0, 0, 0, 0.503);
@@ -85,5 +77,56 @@ img{
 
 .ver-mas{
     color: white;
+}
+
+body {
+    display: grid;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/wallpaper.png');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#panel-izquierdo {
+    position: fixed;
+    top: 0;
+    left: -210px; /* Inicialmente oculto fuera de la pantalla */
+    width: 200px;
+    height: 100%;
+    background-color: black;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease; /* Agregamos una transición para suavizar el desplazamiento */
+    z-index: 1;
+}
+
+#boton-desplegable {
+    cursor: pointer;
+    font-size: 24px;
+    position: fixed;
+    top: 50px;
+    left: 20px;
+    background-color: black;
+    color: white;
+}
+
+#indice-categorias {
+    position: fixed;
+    top: 80px;
+    list-style-type: none;
+    padding: 0;
+}
+
+#indice-categorias li {
+    margin-bottom: 10px;
+}
+
+#indice-categorias a {
+    text-decoration: none;
+    color: beige;
+    font-weight: bold;
+    display: block;
 }
 

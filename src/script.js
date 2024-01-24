@@ -169,11 +169,43 @@ function mostrarCategoria(cocteles, categoria){
     }
 }
 
+// Agrega esta función al final de tu script.js
+function agregarManejadorDesplazamientoSuave() {
+    const enlacesIndice = document.querySelectorAll('#panel-izquierdo a');
+
+    enlacesIndice.forEach(enlace => {
+        console.log(enlacesIndice[0].textContent);
+        enlace.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const destinoId = this.getAttribute('href').substring(1);
+            const destino = document.getElementById(destinoId);
+
+            if (destino) {
+                window.scrollTo({
+                    top: destino.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
+
 // Cargar los cocteles al cargar la página
 function iniciarContenido(){
     document.addEventListener("DOMContentLoaded", () => {
         mostrarCategoria(coctelesClasicos, "clasicos");
         mostrarCategoria(coctelesAutor, "autor");
+        // Llama a la función para agregar el manejador de desplazamiento suave
+        agregarManejadorDesplazamientoSuave();
+        
+        // Agrega lógica para mostrar y ocultar el panel izquierdo
+        const panelIzquierdo = document.getElementById('panel-izquierdo');
+        const botonDesplegable = document.getElementById('boton-desplegable');
+
+        botonDesplegable.addEventListener('click', () => {
+            panelIzquierdo.style.left = panelIzquierdo.style.left === '0px' ? '-210px' : '0px';
+        });
     });
 }
 
