@@ -50,8 +50,9 @@ input{
     display: block;
     color: white;
     text-align: center;
-    text-align-last: center;
+    align-items: flex-start;
     height: 40px;
+    text-decoration: none;
 }
 
 .cocteles-container {

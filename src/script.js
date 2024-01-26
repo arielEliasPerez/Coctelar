@@ -103,14 +103,13 @@ function toggleTodosLosCocteles(cocteles, categoria) {
     if(infoCartegoria.mostrarTodos){
         infoCartegoria.container.innerHTML = ""; // Limpiar el contenedor antes de mostrar todos los cocteles
         mostrarCocteles(cocteles, categoria, 0, coctelesIniciales);
-        infoCartegoria.enlaceVerMas.textContent = "Ver más..."
+        infoCartegoria.enlaceVerMas.innerHTML = `Ver más<br>&#11167;`
     } else{
         mostrarCocteles(cocteles, categoria, coctelesIniciales, cocteles.length);
-        infoCartegoria.enlaceVerMas.textContent = "Ver menos..."
+        infoCartegoria.enlaceVerMas.innerHTML = `&#11165;<br>Ver menos`
     }
     
     infoCartegoria.mostrarTodos = !infoCartegoria.mostrarTodos;
-    //verMasEnlace.textContent = "Ver menos";
 }
 
 // Función para abrir el modal con la receta del coctel seleccionado
