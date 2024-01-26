@@ -88,7 +88,7 @@ function mostrarCocteles(coctelesFiltrados, categoria, inicioCocteles, cantCocte
         const coctelCard = document.createElement("div");
         coctelCard.className = "coctel-card";
         coctelCard.innerHTML = `<img src="${coctel.imagen}" alt="${coctel.nombre}">
-                               <p>${coctel.nombre}</p>`;
+                               <p class="nombre-coctel">${coctel.nombre}</p>`;
         coctelCard.addEventListener("click", () => abrirModal(coctel));
         
         const infoCartegoria = categorias[categoria];
