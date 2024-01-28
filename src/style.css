@@ -4,7 +4,7 @@ header {
     color: white;
     text-align: center;
     padding: 10px 0;
-    font-family: "PMingLiU-ExtB";
+    font-family: "Bahnschrift SemiBold Condensed";
 }
 
 input{
@@ -142,7 +142,7 @@ body {
     left: -210px; /* Inicialmente oculto fuera de la pantalla */
     width: 200px;
     height: 100%;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.583);
     padding: 10px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: left 0.3s ease; /* Agregamos una transición para suavizar el desplazamiento */
