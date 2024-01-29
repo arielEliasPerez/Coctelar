@@ -1,10 +1,11 @@
+//import cocktailData from './cocktailData.js';
 const modal = document.getElementById("receta-modal");
 const coctelTitulo = document.getElementById("coctel-titulo");
 const coctelImagen = document.getElementById("coctel-imagen");
 const coctelIngredientes = document.getElementById("coctel-ingredientes");
 const coctelReceta = document.getElementById("coctel-receta");
 const buscarInput = document.getElementById("buscar-coctel");
-
+/*
 const categorias = {
    clasicos: {
     container: document.getElementById("cocteles-container"),
@@ -51,10 +52,10 @@ const categorias = {
     enlaceVerMas: document.getElementById("ver-mas-autor"),
     mostrarTodos: false
    }
-};
+};*/
 
 const coctelesIniciales = 8;
-
+/*
 // Datos de ejemplo (puedes reemplazarlos con tus propias recetas)
 const coctelesClasicos = [
     { nombre: "Alexander", imagen: "../images/alexander.jpg", ingredientes: ["1 oz Cogñac", "1 oz Licor de Cacao", "1 oz Half and Half"], receta: "En una coctelera con hielo, agrega el coñac, el licor de cacao y el Half and Half.\n Agita vigorosamente durante 15-20 segundos para enfriar y mezclar bien los ingredientes.\n Cuela la mezcla en una Copa Martini o Copa Coupé, previamente enfriada.\n Decorar con una ramita de canela y espolvorear un poco de cacao en polvo por encima.\n ¡Disfruta!" },
@@ -156,7 +157,7 @@ const coctelesAutor = [
     { nombre: "Rose of the Nile", imagen: "../images/roseofthenile.jpg", ingredientes: ["60 ml de Vermouth rosso", "30 ml de Syrup de Jengibre", "30 ml de zumo de Limón", "30 ml de Jugo de Pomelo", "Clara de Huevo"], receta: "Ingredientes y pasos para la Margarita..." },
     { nombre: "White Ilex", imagen: "../images/whiteilex.jpg", ingredientes: ["45 ml de Ginebra", "30 ml de Falernum (Casero)", "30 ml de Infusión de Yerba Mate", "30 ml de Pulpa de Ananá"], receta: "Ingredientes y pasos para la Margarita..." },
     // { nombre: "", imagen: "../images/.jpg", ingredientes: [], receta: "Ingredientes y pasos para la Margarita..." },
-];
+]; */
 
 // Función para mostrar los cocteles en la página
 function mostrarCocteles(coctelesFiltrados, categoria, inicioCocteles, cantCocteles) {
@@ -229,15 +230,15 @@ function filtrarCocteles(cocteles, categoria) {
 }
 
 //manejar eventos de busquedas
-buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesClasicos, "clasicos"));
-buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesBatidos, "batidos"));
-buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesRefrescados, "refrescados"));
-buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesFrozzen, "frozzen"));
-buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesTikis, "tikis"));
-buscarInput.addEventListener("input", ()=>filtrarCocteles(cafeteria, "cafeteria"));
-buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesChampagne, "champagne"));
-buscarInput.addEventListener("input", ()=>filtrarCocteles(shooters, "shooters"));
-buscarInput.addEventListener("input", ()=>filtrarCocteles(coctelesAutor, "autor"));
+buscarInput.addEventListener("input", ()=>filtrarCocteles(cocktailData.coctelesClasicos, "clasicos"));
+buscarInput.addEventListener("input", ()=>filtrarCocteles(cocktailData.coctelesBatidos, "batidos"));
+buscarInput.addEventListener("input", ()=>filtrarCocteles(cocktailData.coctelesRefrescados, "refrescados"));
+buscarInput.addEventListener("input", ()=>filtrarCocteles(cocktailData.coctelesFrozzen, "frozzen"));
+buscarInput.addEventListener("input", ()=>filtrarCocteles(cocktailData.coctelesTikis, "tikis"));
+buscarInput.addEventListener("input", ()=>filtrarCocteles(cocktailData.cafeteria, "cafeteria"));
+buscarInput.addEventListener("input", ()=>filtrarCocteles(cocktailData.coctelesChampagne, "champagne"));
+buscarInput.addEventListener("input", ()=>filtrarCocteles(cocktailData.shooters, "shooters"));
+buscarInput.addEventListener("input", ()=>filtrarCocteles(cocktailData.coctelesAutor, "autor"));
 
 function mostrarCategoria(cocteles, categoria){
     mostrarCocteles(cocteles, categoria, 0, coctelesIniciales);
@@ -281,15 +282,15 @@ function agregarManejadorDesplazamientoSuave() {
 // Cargar los cocteles al cargar la página
 function iniciarContenido(){
     document.addEventListener("DOMContentLoaded", () => {
-        mostrarCategoria(coctelesClasicos, "clasicos");
-        mostrarCategoria(coctelesBatidos, "batidos");
-        mostrarCategoria(coctelesRefrescados, "refrescados");
-        mostrarCategoria(coctelesFrozzen, "frozzen");
-        mostrarCategoria(coctelesTikis, "tikis");
-        mostrarCategoria(cafeteria, "cafeteria");
-        mostrarCategoria(coctelesChampagne, "champagne");
-        mostrarCategoria(shooters, "shooters");
-        mostrarCategoria(coctelesAutor, "autor");
+        mostrarCategoria(cocktailData.coctelesClasicos, "clasicos");
+        mostrarCategoria(cocktailData.coctelesBatidos, "batidos");
+        mostrarCategoria(cocktailData.coctelesRefrescados, "refrescados");
+        mostrarCategoria(cocktailData.coctelesFrozzen, "frozzen");
+        mostrarCategoria(cocktailData.coctelesTikis, "tikis");
+        mostrarCategoria(cocktailData.cafeteria, "cafeteria");
+        mostrarCategoria(cocktailData.coctelesChampagne, "champagne");
+        mostrarCategoria(cocktailData.shooters, "shooters");
+        mostrarCategoria(cocktailData.coctelesAutor, "autor");
         // Llama a la función para agregar el manejador de desplazamiento suave
         agregarManejadorDesplazamientoSuave();
         
