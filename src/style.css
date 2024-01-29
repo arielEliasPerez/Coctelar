@@ -24,7 +24,7 @@ input{
 
 .seccion-container{
     display: flex;
-    background-color: rgba(0, 0, 0, 0.571);
+    background-color: rgba(0, 0, 0, 0.674);
     flex-direction: column;
     width: 82%;
     margin: 20px;
