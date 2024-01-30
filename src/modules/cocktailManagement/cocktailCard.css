@@ -1,0 +1,21 @@
+.coctel-card {
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    background-color: rgba(85, 10, 10, 0.734);
+    border: solid rgba(114, 13, 13, 0.734) 1px;
+}
+
+.coctel-card:hover {
+    transform: scale(1.1);
+}
+
+.nombre-coctel{
+    margin-top: 0%;
+    font-family: "Yu Gothic Medium";
+}
+
+img{
+    width: 200px;
+    height: 200px;
+}
