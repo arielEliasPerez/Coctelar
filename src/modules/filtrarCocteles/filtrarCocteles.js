@@ -21,8 +21,6 @@ function filtrarCocteles(categoria) {
         categoria.enlaceVerMas.style.display = coctelesIniciales < categoria.cocteles.length ? "block" : "none";
         categoria.enlaceVerMas.innerHTML = `Ver más<br>&#11167;`
         mostrarCocteles(categoria, 0, coctelesIniciales);
-        
-       //mostrarCategoria(cocteles, categoria);
     }else{
         console.log("adentro");
         //console.log(categoria);
