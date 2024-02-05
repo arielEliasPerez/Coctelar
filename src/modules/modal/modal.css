@@ -17,6 +17,7 @@
     min-height: 300px;
     position: relative;
     border: solid rgb(146, 21, 21) 4px;
+    border-radius: 5px;
 }
 
 .close-modal {
@@ -29,13 +30,24 @@
 
 .close-modal:hover,
 .close-modal:focus {
-    color: black;
+    color: rgba(146, 7, 7, 0.549);
     text-decoration: none;
     cursor: pointer;
 }
 
 #coctel-imagen{
     float: right;
-    width: 250px;
+    width: 290px;
     height: 300px;
+}
+
+
+#referencia-coctel{
+    text-align: right;
+    clear: right;
+    font-size: x-small;
+    color: gray;
+    padding-top: 10px;
+    margin-bottom: 0%;
+    font-style: italic;
 }

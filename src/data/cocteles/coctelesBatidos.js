@@ -1,11 +1,5 @@
 const coctelesBatidos = [
     { 
-        nombre: "Blue Hawaiian", 
-        imagen: "../src/data/cocteles/imagesCocktail/batidos/bluehawaiian.jpg", 
-        ingredientes: ["30 ml de Ron", "15 ml de Blue Curacao", "60 ml de Pulpa de Ananá", "45 ml de Sour Mix"], 
-        receta: "Ingredientes y pasos para la Margarita..." 
-    },
-    { 
         nombre: "Chacho", 
         imagen: "../src/data/cocteles/imagesCocktail/batidos/chacho.jpg", 
         ingredientes: ["30 ml de Whisky", "45 ml de Licor de Choclote", "15 ml de Licor de Huevo"], 
