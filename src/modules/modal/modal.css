@@ -18,6 +18,7 @@
     position: relative;
     border: solid rgb(146, 21, 21) 4px;
     border-radius: 5px;
+    font-family: 'calibri';
 }
 
 .close-modal {

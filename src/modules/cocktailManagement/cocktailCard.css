@@ -2,7 +2,7 @@
     margin: 10px;
     cursor: pointer;
     transition: transform 0.3s;
-    background-color: rgba(85, 10, 10, 0.734);
+    background-color: rgba(99, 11, 11, 0.391);
     border: solid rgba(114, 13, 13, 0.734) 1px;
 }
 
@@ -12,7 +12,8 @@
 
 .nombre-coctel{
     margin-top: 0%;
-    font-family: "Yu Gothic Medium";
+    font-family: "Constantia";
+    
 }
 
 img{
