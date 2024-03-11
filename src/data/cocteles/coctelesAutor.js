@@ -63,7 +63,15 @@ const coctelesAutor = [
         receta: "Verter todos los ingredientes en una coctelera con hielo. Agitar la coctelera durante unos 15-20 segundos.\nColar la mezcla en un mate.\nDecorar con una rodaja y hojas de ananá.\n¡Disfruta!",
         referencia: "Receta de autor pública y oficial del Bartender Ariel Pérez, creador del sitio web"
     },
-    // { nombre: "", imagen: "../public/assets/images/autor/.jpg", ingredientes: [], receta: "Ingredientes y pasos para la Margarita..." },
+    /*
+    { 
+        nombre: "", 
+        imagen: "../public/assets/images/autor/.jpg",
+        ingredientes: [],
+        receta: "",
+        referencia: "" 
+    },
+    */
 ];
 
 window.coctelesAutor = coctelesAutor;

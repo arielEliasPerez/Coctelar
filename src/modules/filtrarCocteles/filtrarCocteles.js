@@ -12,18 +12,17 @@ function filtrarCocteles(categoria) {
     const filtro = buscarInput.value.toLowerCase();
     const coctelesFiltrados = categoria.cocteles.filter(coctel => coctel.nombre.toLowerCase().includes(filtro));
 
+    categoria.container.innerHTML=coctelesFiltrados.length===0? `No se ha encontrado '${buscarInput.value}' en esta categoría`: "";
+
     categoria.enlaceVerMas.style.display = "none"; // Ocultar el enlace "Ver más"
-    categoria.container.innerHTML = "";
+    //categoria.container.innerHTML = "";
 
     if(buscarInput.value === ""){
         categoria.mostrarTodos = false;
-        console.log("adentro en nada");
         categoria.enlaceVerMas.style.display = coctelesIniciales < categoria.cocteles.length ? "block" : "none";
         categoria.enlaceVerMas.innerHTML = `Ver más<br>&#11167;`
         mostrarCocteles(categoria, 0, coctelesIniciales);
     }else{
-        console.log("adentro");
-        //console.log(categoria);
         var categoriaFiltrada = {
             cocteles: coctelesFiltrados,
             container: categoria.container,
@@ -31,5 +30,6 @@ function filtrarCocteles(categoria) {
             mostrarTodos: categoria.enlaceVerMas
         }
         mostrarCocteles(categoriaFiltrada, 0, coctelesFiltrados.length);
+    
     }
 }

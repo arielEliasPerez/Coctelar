@@ -1,18 +1,39 @@
 
 header {
-    background-color: rgba(0, 0, 0, 0.503);
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-family: "Bookman Old Style";
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+
+    background-color: rgba(0, 0, 0, 0.925);
+    
+    
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+#titulo-encabezado{
+    width: 400px;
+    height: 100px;
+    
+}
+
+@media screen and (max-width: 567px) and (orientation: portrait) {
+
+    header{
+        flex-wrap: wrap;
+    }
+
 }
 
 input{
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.411);
     width: 25%;
     height: 30px;
     color: aliceblue;
-    
+    margin-top: 0%;
+    margin-bottom: 3px;
+    margin-right: 20px;
     border-radius: 7px;
 }
 
@@ -22,6 +43,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('assets/images/wallpaper.jpg');
+    
     background-size: cover;
     background-attachment: fixed;
 }
@@ -38,25 +60,26 @@ body {
     flex-direction: column;
     width: 82%;
     margin: 20px;
-    border: solid 1px rgba(110, 6, 6, 0.972);
+    border: solid rgb(83, 83, 0) 1px;
     border-radius: 7px;
 }
 
 .titulo-seccion{
     color: white;
-    background-color: rgba(99, 11, 11, 0.391);
+    background-color: rgba(0, 0, 0, 0.886);
     height: 50px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Bahnschrift SemiLight";
+    font-family: "Franklin Gothic Medium";
+    font-size: 25px;
     margin-top: 0%;
     margin-bottom: 0%;
 }
 
 .ver-mas{
-    background-color: rgba(99, 11, 11, 0.391);
+    background-color: rgba(0, 0, 0, 0.886);
     display: block;
     color: white;
     text-align: center;

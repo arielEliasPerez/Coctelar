@@ -2,8 +2,10 @@
     margin: 10px;
     cursor: pointer;
     transition: transform 0.3s;
-    background-color: rgba(99, 11, 11, 0.391);
-    border: solid rgba(114, 13, 13, 0.734) 1px;
+    background-color:black;
+    border: solid rgb(74, 78, 2) 1px;
+    border-radius: 3px;
+    color: rgb(216, 214, 214);
 }
 
 .coctel-card:hover {
@@ -12,11 +14,27 @@
 
 .nombre-coctel{
     margin-top: 0%;
-    font-family: "Constantia";
-    
+    font-weight: bold;
+    text-align: center;
+    font-family: "Yu Gothic UI";
 }
 
 img{
     width: 200px;
     height: 200px;
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+
+    .coctel-card{
+        width: 135px;
+        height: 175px;
+    }
+
+    img{
+        width: 100%;
+        height: 75%;
+
+    }
+
 }
