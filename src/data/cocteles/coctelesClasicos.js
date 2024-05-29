@@ -1,7 +1,9 @@
+const ruta = "src/data/cocteles/imagesCocktail/clasicos/";
+
 const coctelesClasicos = [
     {
         nombre: "Alexander",
-        imagen: "../src/data/cocteles/imagesCocktail/clasicos/alexander.jpg",
+        imagen: ruta + "alexander.jpg",
         ingredientes: ["1 oz Cogñac", "1 oz Licor de Cacao", "1 oz Half and Half"], 
         receta: "Antes de comenzar pon a enfriar una copa margarita o copa coupé.\nLuego vertir todos los ingredientes en una coctelera con hielo. Agitar vigorosamente durante 15-20 segundos.\nCuela la mezcla en la copa previamente enfriada.\n Decorar con una ramita de canela y/o espolvorear un poco de cacao en polvo por encima.\n ¡Disfruta!",
         referencia: "Receta otorgada por el Centro Internacional de Coctelería"
