@@ -73,7 +73,7 @@ const coctelesChampagne = [
     },
     {
         nombre: "Poisson", 
-        imagen: rutaChampagnes + "Poisson.jpg", 
+        imagen: rutaChampagnes + "poisson.jpg", 
         ingredientes: ["15 ml de Licor de Durazno", "15 ml de Triple Sec", "15 ml de Pulpa de Durazno", "Rellenar con Fresita"], 
         receta: "En una copa brunello con hielo vertir todos los ingredientes, rellenando con la fresita a lo último.\n¡Disfruta!",
         referencia: "Receta otorgada por el Centro Internacional de Coctelería"
