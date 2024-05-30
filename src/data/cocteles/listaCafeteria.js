@@ -31,7 +31,7 @@ const listaCafeteria = [
     },
     {
         nombre: "Café de la Montaña",
-        imagen: "../src/data/cocteles/imagesCocktail/cafeteria/cafemontaña.jpg",
+        imagen: rutaCafeteria + "cafemontaña.jpg",
         ingredientes: ["30 ml de Licor de Chocolate", "30 ml de Licor de Chocolate Blanco", "150 ml de Café Espresso", "20% de Crema Batida"],
         receta: "Primero preparar un café espresso recién hecho. Luego en un jarrito de café, servir los ingredientes separados en capas. Para ello verter primero el licor de chocolate blanco, luego verter suavemente el licor de chocolate amortiguando con la parte superior de una cucharilla, luego hacer lo mismo con el café y por último rellenar en la parte superior con la crema batida.\nPuedes espolvorear un poco de cacao por encima.\n¡Disfruta!",
         referencia: "Receta otorgada por el Centro Internacional de Coctelería"
