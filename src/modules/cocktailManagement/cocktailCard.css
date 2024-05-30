@@ -3,7 +3,7 @@
     cursor: pointer;
     transition: transform 0.3s;
     background-color:black;
-    border: solid rgb(74, 78, 2) 1px;
+    border: solid rgb(65, 65, 63) 1px;
     border-radius: 3px;
     color: rgb(216, 214, 214);
 }

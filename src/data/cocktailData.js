@@ -1,6 +1,7 @@
 const cocktailData = {
     coctelesClasicos: coctelesClasicos,
     coctelesBatidos: coctelesBatidos,
+    coctelesDirectos: coctelesDirectos,
     coctelesRefrescados: coctelesRefrescados,
     coctelesFrozzen: coctelesFrozzen, 
     coctelesTikis: coctelesTikis,

@@ -57,13 +57,35 @@ const coctelesAutor = [
         referencia: "Receta de autor pública y oficial del Bartender Ariel Pérez, creador del sitio web"
     },
     { 
+        nombre: "Vikii", 
+        imagen: "../public/assets/images/autor/Vikii.jpg",
+        ingredientes: ["30 ml de Vodka", "45 ml de Licor casero de Flynn Paff a base de Vodka de Sandía", "30 ml de Pulpa de Ananá", "30 ml de Jugo de Naranja"],
+        receta: "Verter todos los ingredientes en una coctelera con hielo. Agitar durante unos 10 segundos. Colar la mezcla en una copa huracán con hielo.\nDecorar con una rodaja de ananá.\n¡Disfruta!",
+        referencia: "Receta de autor oficial del Bartender Ariel Pérez, creador de Coctelar" 
+    },
+    { 
         nombre: "White Ilex", 
         imagen: "../src/data/cocteles/imagesCocktail/autor/whiteilex.jpg", 
         ingredientes: ["45 ml de Ginebra", "30 ml de Falernum (Casero)", "30 ml de Infusión de Yerba Mate", "30 ml de Pulpa de Ananá"], 
         receta: "Verter todos los ingredientes en una coctelera con hielo. Agitar la coctelera durante unos 15-20 segundos.\nColar la mezcla en un mate.\nDecorar con una rodaja y hojas de ananá.\n¡Disfruta!",
-        referencia: "Receta de autor pública y oficial del Bartender Ariel Pérez, creador del sitio web"
+        referencia: "Receta de autor oficial del Bartender Ariel Pérez, creador de Coctelar"
+    },/*
+    { 
+        nombre: "Piña Colada", 
+        imagen: "../public/assets/images/autor/piñacolada.jpg",
+        ingredientes: ["0.5 OZ de Gin", "1.5 OZ de Malibú", "1 OZ de Almíbar de Naranja/Mango", "2 OZ de Jugo de Ananá", "1 OZ de Jugo de Lima"],
+        receta: "Verter todos los ingredientes en una coctelera con hielo. Servir en un vaso Opera o vaso largo.\nDecorar con Decorar con rodaja de Lima sobre el vaso",
+        referencia: "Drink Factory" 
     },
-    /*
+     
+    { 
+        nombre: "Penicillin", 
+        imagen: "../public/assets/images/autor/Penicillin.jpg",
+        ingredientes: ["2 OZ de Whisky de Autor", "2 OZ de Almíbar de Miel y Jengibre", "1 OZ de Jugo de Lima"],
+        receta: "Colocar todos los ingredientes en una coctelera con hielo. Agitar y colar en un vaso Vegas/aruba o vaso corto.\n Decorar con una rodaja de Lima.",
+        referencia: "Drink Factory" 
+    },
+    
     { 
         nombre: "", 
         imagen: "../public/assets/images/autor/.jpg",

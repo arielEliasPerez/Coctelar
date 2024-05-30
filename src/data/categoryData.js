@@ -11,6 +11,12 @@ const categorias = {
      enlaceVerMas: document.getElementById("ver-mas-batidos"),
      mostrarTodos: false
     },
+    directos: {
+        cocteles: cocktailData.coctelesDirectos,
+        container: document.getElementById("directos-container"),
+        enlaceVerMas: document.getElementById("ver-mas-directos"),
+        mostrarTodos: false
+       },
     refrescados: {
      cocteles: cocktailData.coctelesRefrescados,
      container: document.getElementById("refrescados-container"),
