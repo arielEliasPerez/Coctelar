@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="src/modules/indiceCategorias/indiceCategorias.css">
+    <link rel="stylesheet" href="src/modules/cocktailManagement/cocktailCard.css">
+    <link rel="stylesheet" href="src/modules/modal/modal.css">
+    <title>Recetas de Cocteles</title>
+</head>
+<body>
+    <header>
+        <img id="titulo-encabezado" src="assets/images/coctelar.png" alt="Coctelar">
+        <br>
+        <input type="text" id="buscar-coctel" placeholder="Buscar Cóctel...">
+    </header>
+    
+    <div id="panel-izquierdo">
+        <div id="boton-desplegable">&#9776;</div>
+        <ul id="indice-categorias">
+            <li><a href="#titulo-clasicos">Cocteles Clásicos</a></li>
+            <li><a href="#titulo-batidos">Cocteles Batidos</a></li>
+            <li><a href="#titulo-directos">Cocteles Directos</a></li>
+            <li><a href="#titulo-refrescados">Cocteles Refrescados</a></li>
+            <li><a href="#titulo-frozzen">Cocteles Frozzen</a></li>
+            <li><a href="#titulo-tikis">Cocteles Tikis</a></li>
+            <li><a href="#titulo-cafeteria">Cafetería Especial</a></li>
+            <li><a href="#titulo-champagne">Cocteles con Champagne</a></li>
+            <li><a href="#titulo-shooters">Shooters</a></li>
+            <li><a href="#titulo-autor">Cocteles de Autor</a></li>
+        </ul>
+    </div>
+
+    <main id="main">
+        <div class="seccion-container">
+            <h2 id="titulo-clasicos" class="titulo-seccion">COCTELES CLÁSICOS</h2>
+            <div id="cocteles-container" class="cocteles-container">
+                <!-- Aquí se cargarán los cocteles dinámicamente con JavaScript -->
+            </div>
+            <a id="ver-mas-clasicos" class="ver-mas" href="#">Ver más<br>&#11167;</a>
+        </div>
+        
+        <div class="seccion-container">
+            <h2 id="titulo-batidos" class="titulo-seccion">COCTELES BATIDOS</h2>
+            <div id="batidos-container" class="cocteles-container">
+            </div>
+            <a id="ver-mas-batidos" class="ver-mas" href="#">Ver más<br>&#11167;</a>
+        </div>
+        
+        <div class="seccion-container">
+            <h2 id="titulo-directos" class="titulo-seccion">COCTELES DIRECTOS</h2>
+            <div id="directos-container" class="cocteles-container">
+            </div>
+            <a id="ver-mas-directos" class="ver-mas" href="#">Ver más<br>&#11167;</a>
+        </div>
+
+        <div class="seccion-container">
+            <h2 id="titulo-refrescados" class="titulo-seccion">COCTELES REFRESCADOS</h2>
+            <div id="refrescados-container" class="cocteles-container">
+            </div>
+            <a id="ver-mas-refrescados" class="ver-mas" href="#">Ver más<br>&#11167;</a>
+        </div>
+
+        <div class="seccion-container">
+            <h2 id="titulo-frozzen" class="titulo-seccion">COCTELES FROZZEN</h2>
+            <div id="frozzen-container" class="cocteles-container">
+            </div>
+            <a id="ver-mas-frozzen" class="ver-mas" href="#">Ver más<br>&#11167;</a>
+        </div>
+
+        <div class="seccion-container">
+            <h2 id="titulo-tikis" class="titulo-seccion">COCTELES TIKIS</h2>
+            <div id="tikis-container" class="cocteles-container">
+            </div>
+            <a id="ver-mas-tikis" class="ver-mas" href="#">Ver más<br>&#11167;</a>
+        </div>
+
+        <div class="seccion-container">
+            <h2 id="titulo-cafeteria" class="titulo-seccion">CAFETERÍA ESPECIAL</h2>
+            <div id="cafeteria-container" class="cocteles-container">
+            </div>
+            <a id="ver-mas-cafeteria" class="ver-mas" href="#">Ver más<br>&#11167;</a>
+        </div>
+
+        <div class="seccion-container">
+            <h2 id="titulo-champagne" class="titulo-seccion">COCTELES CHAMPAGNE</h2>
+            <div id="champagne-container" class="cocteles-container">
+            </div>
+            <a id="ver-mas-champagne" class="ver-mas" href="#">Ver más<br>&#11167;</a>
+        </div>
+
+        <div class="seccion-container">
+            <h2 id="titulo-shooters" class="titulo-seccion">SHOOTERS</h2>
+            <div id="shooters-container" class="cocteles-container">
+            </div>
+            <a id="ver-mas-shooters" class="ver-mas" href="#">Ver más<br>&#11167;</a>
+        </div>
+        
+        <div class="seccion-container">
+            <h2 id="titulo-autor" class="titulo-seccion">COCTELES DE AUTOR</h2>
+            <div id="autor-container" class="cocteles-container">
+            </div>
+            <a id="ver-mas-autor" class="ver-mas" href="#">Ver más<br>&#11167;</a>
+        </div>
+        
+
+        <div id="receta-modal" class="modal">
+            <!-- Aquí se cargará la receta del cóctel seleccionado -->
+            <div class="modal-content">
+                <span class="close-modal" onclick="cerrarModal()">&times;</span>
+                <img id="coctel-imagen">
+                <h2 id="coctel-titulo"></h2>
+                
+                <ul id="coctel-ingredientes" src=""></ul>
+                <p id="coctel-receta"></p>
+                <p id="referencia-coctel"></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="src/index.js"></script>
+    <script src="src/data/cocteles/coctelesClasicos.js"></script>
+    <script src="src/data/cocteles/coctelesBatidos.js"></script>
+    <script src="src/data/cocteles/coctelesDirectos.js"></script>
+    <script src="src/data/cocteles/coctelesRefrescados.js"></script>
+    <script src="src/data/cocteles/coctelesFrozzen.js"></script>
+    <script src="src/data/cocteles/coctelesTikis.js"></script>
+    <script src="src/data/cocteles/listaCafeteria.js"></script>
+    <script src="src/data/cocteles/coctelesChampagne.js"></script>
+    <script src="src/data/cocteles/shooters.js"></script>
+    <script src="src/data/cocteles/coctelesAutor.js"></script>
+    <script src="src/data/cocktailData.js"></script>
+    <script src="src/data/categoryData.js"></script>
+    <script src="src/modules/modal/modal.js"></script>
+    <script src="src/modules/cocktailManagement/cocktailManagement.js"></script>
+    <script src="src/modules/indiceCategorias/indiceCategorias.js"></script>
+    <script src="src/modules/filtrarCocteles/filtrarCocteles.js"></script>
+</body>
+</html>
