@@ -10,14 +10,14 @@ const coctelesClasicos = [
     },
     { 
         nombre: "Americano", 
-        imagen: "../src/data/cocteles/imagesCocktail/clasicos/americano.jpg", 
+        imagen: ruta + "americano.jpg", 
         ingredientes: ["30 ml de Campari", "30 ml de Vermouth Rosso", "Chorrito de Soda"], 
         receta: "En un vaso old fashioned con hielo, agregue los ingredientes y revuelva suavemente.\n¡Disfruta!",
         referencia: "Receta oficial del International Bartenders Association"
     },
     { 
         nombre: "Barracuda", 
-        imagen: "../src/data/cocteles/imagesCocktail/clasicos/barracuda.jpg", 
+        imagen: ruta + "barracuda.jpg", 
         ingredientes: ["45 ml de Ron Blanco", "15 ml de Licor de Banana", "30 ml de Zumo de Ananá", "60 ml de Champagne"], 
         receta: "Antes de comenzar, pon a enfriar una copa coupé o copa brunello.\nLuego agrega todos los ingredientes, excepto el Champagne, en una coctelera con hielo. Agite unos 10-15 segundos.\nCuela la mezcla en la copa previamente enfriada.\nCompleta la bebida con el Champagne o vino espumoso. Puedes decorar con una rodaja de ananá y/o una cereza.\n¡Disfruta!",
         referencia: "Receta oficial del International Bartenders Association" 
