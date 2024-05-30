@@ -31,7 +31,7 @@ const coctelesTikis = [
     },
     {
         nombre: "Mango Tango", 
-        imagen: "../src/data/cocteles/imagesCocktail/tikis/mangotango.jpg", 
+        imagen: rutaTikis + "mangotango.jpg", 
         ingredientes: ["60 ml de Ron blanco", "30 ml de Licor de Mango", "30 ml de Jugo de Ananá", "15 ml de Jugo de Lima"], 
         receta: "Verter todos los ingredientes en una coctelera con hielo. Agitar durante unos 10-15 segundos.\nColar la mezcla en un vaso alto o copa huracán con hielo.\nDecorar con una rodaja y hojas de ananá.\n¡Disfruta!",
         referencia: "Basado en la receta establecida por Academia Bartender"
