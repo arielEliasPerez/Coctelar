@@ -1,4 +1,4 @@
-const rutaDirectos = "../src/data/cocteles/imagesCocktail/directos/";
+const rutaDirectos = "src/data/cocteles/imagesCocktail/directos/";
 
 const coctelesDirectos = [
     { 

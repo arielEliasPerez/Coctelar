@@ -1,4 +1,4 @@
-const rutaBatidos = "../src/data/cocteles/imagesCocktail/batidos/";
+const rutaBatidos = "src/data/cocteles/imagesCocktail/batidos/";
 
 const coctelesBatidos = [
     { 
