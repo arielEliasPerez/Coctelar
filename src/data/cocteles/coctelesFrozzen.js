@@ -31,7 +31,7 @@ const coctelesFrozzen = [
     },
     {
         nombre: "Capeta", 
-        imagen: rutaFrozzen + "capeta.jpg", 
+        imagen: rutaFrozzen + "Capeta.jpg", 
         ingredientes: ["60 ml de Vodka", "30 ml de Pulpa de Guaraná", "1 oz de Canela", "30 ml de Leche Condensada"], 
         receta: "Vertir todos los ingredientes en una licuadora con hielo triturado. Licuar la mezcle durante unos 10 segundo, y luego servir en una copa huracán.\nPuedes decorar con una ramita de canela.\n¡Disfruta!",
         referencia: "Receta otorgada por el Centro Internacional de Coctelería"
