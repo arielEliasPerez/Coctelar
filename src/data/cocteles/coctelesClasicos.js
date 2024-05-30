@@ -73,7 +73,7 @@ const coctelesClasicos = [
     },
     { 
         nombre: "Cuba Libre", 
-        imagen: "../src/data/cocteles/imagesCocktail/clasicos/cubalibre.jpg", 
+        imagen: ruta + "cubalibre.jpg", 
         ingredientes: ["45 ml de Ron Blanco", "120 ml de Coca-Cola", "10 ml de Zumo de Limón"], 
         receta: "En un vaso alto con hielo, vierta el ron y el zumo de limón. Luego complete con Coca-Cola al gusto.\nRevuelva suavemente con una cucharilla.\nDecorar con unas rodajas de limón.\n¡Disfruta!",
         referencia: "Receta otorgada por el Centro Internacional de Coctelería"
@@ -129,7 +129,7 @@ const coctelesClasicos = [
     },
     { 
         nombre: "Manhattan", 
-        imagen: "../src/data/cocteles/imagesCocktail/clasicos/manhattan.jpg", 
+        imagen: ruta + "manhattan.jpg", 
         ingredientes: ["60 ml de Whisky canadian", "30 ml de Vermouth Rosso", "Gotas de Bitter Angostura"], 
         receta: "Antes de empezar pon a enfriar una copa martini.\nLuego agregue todos los ingredientes en un Vaso Mezclador con hielo. Revuelva unos 10-15 segundos.\nCuele la mezcla en la copa previamente enfriada.\nDecorar con una cereza sobre el cóctel.\n¡Disfruta!",
         referencia: "Receta oficial del International Bartenders Association"
@@ -178,7 +178,7 @@ const coctelesClasicos = [
     },
     { 
         nombre: "Moscow Mule", 
-        imagen: "../src/data/cocteles/imagesCocktail/clasicos/moscowmule.jpg", 
+        imagen: ruta + "moscowmule.jpg", 
         ingredientes: ["60 ml de Vodka", "120 ml de Cerveza de Jengibre", "15 ml de Zumo de Lima"], 
         receta: "En una taza moscow mule de acero inoxidable llena con hielo, vierte los ingredientes y revuelva suavemente.\nDecorar con una rodaja de limón y unas hojas de menta.\n¡Disfruta!",
         referencia: "Receta oficial del International Bartenders Association"
